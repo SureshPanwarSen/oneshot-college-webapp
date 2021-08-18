@@ -8,7 +8,7 @@ import api from "../api/colleges";
 import StudentList from "./StudentList";
 
 const CollegeDetail = (props) => {
-  const { _id, name, email, state, city, code, country, addressLine, foundedYear, departments, courses, ratings } = props.location.state.college;
+  const { _id, name, email, state, city, code, country, addressLine, foundedYear, departments, courses, ratings, totalStudents } = props.location.state.college;
   const currentCollege = props.location.state.college;
 
   let coursesOffered = '';
@@ -88,6 +88,7 @@ const CollegeDetail = (props) => {
           <div className="header space">{name} - {state}, {country}</div>
           <div className="description space">{addressLine}, {city}, {code}</div>
           <div className="description space">Contact Email: {email}</div>
+          <div className="description space">Total Students: {totalStudents}</div>
           <div className="description space">Founded Year: {foundedYear}</div>
           <div className="description space">Departments: {departmentsAvailable}</div>
           <div className="description space">Courses: {coursesOffered}</div>
